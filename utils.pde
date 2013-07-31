@@ -60,3 +60,13 @@ void rectCornerVec(PVector topLeft, PVector bottomRight){
    rectMode(CORNERS);
    rect(topLeft.x, topLeft.y, bottomRight.x , bottomRight.y);
 }
+
+
+PImage loadImageAndScale(String filePath, float scaleFactor){
+   PImage img = loadImage(filePath);
+   int w = img.width;
+   w = (int) (w * scaleFactor);
+   int h  = (int) (img.height * scaleFactor);
+   img.resize(w,h);
+   return img;
+}
