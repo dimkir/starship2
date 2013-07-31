@@ -8,6 +8,7 @@ RendererBase[] allRenderers;   // this is just "stores" for containing renderers
 */
 RendererBase initRenderersForTesting()
 {
-   return new GeometricRenderer();
+   //return new GeometricRenderer();
+   return new HudRenderer();
       
 }
