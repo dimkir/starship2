@@ -12,6 +12,14 @@ class ShipModel
    
    int mNextShotEarliestTime;
    
+   protected ShipModel(TheDispatcher vDispatcher){
+      mTheDispatcher = vDispatcher;
+      location = new PVector(); // just not to have 0 location.
+                                // but techincalliy it's undefined now.
+      initGunModel(); //                                 
+   }
+   
+   
    /**
    * This is dummy constructor which constructs 
    * ships in the 4th quadrant.
@@ -19,18 +27,33 @@ class ShipModel
    ShipModel(int x0, int vWidth, int x1, int vHeight, TheDispatcher vDispatcher){
       mTheDispatcher = vDispatcher;
       location = new PVector(random(x0, vWidth), random(x1, vHeight));
+      initGunModel();
+   }
+   
+   
+   private void initGunModel(){
       mGunModel = new GunModel();
       mNextShotEarliestTime = millis() + randomDelayBetweenShots();
    }
    
    
    
-   PVector getLocation(){
+   /**
+   * This is the main thing.
+   */
+   public PVector getLocation(){
        return location;
    }
    
    /**
-   * Returns triangle of the ship.
+   * Copies the value of v into location vector. 
+   */
+   public void setLocation(PVector v){
+      location.set(v);
+   }
+   
+   /**
+   * Returns triangle "carcassus" of the ship (the center of the triangle is in the "origin" 0.0)
    * Relatively to (0,0)
    * So you need to "translate it" by location vector, to display it at right loctin.
    */
@@ -39,7 +62,7 @@ class ShipModel
        return t;
    }
    
-   float getAngle(){
+   public float getAngle(){
       return angle;
    }
    
