@@ -23,7 +23,9 @@ void dprintln(String s){
 }
 
 
-
+void dprintarln(String[] ar){
+   println(ar);
+}
 
 
 void setupFonts(){
