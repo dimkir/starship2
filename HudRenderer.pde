@@ -1,5 +1,6 @@
 /**
-* This is "advanced renderer" attempt. 
+* This is "advanced renderer" attempt. (Basically bad name
+* it's "advancedRenderer" rather than "hud" renderer.git 
 * Basically the idea of this renderer is to allow gradual
 * improvement of the original one. 
 * Step by step we override some methods to improve everything.

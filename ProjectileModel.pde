@@ -1,3 +1,6 @@
+/**
+* This is projectile Collection (named model unfortunately)
+*/
 class ProjectileModel
 {
    private Projectile[] mProjectiles;
