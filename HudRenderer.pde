@@ -27,10 +27,14 @@ class HudRenderer extends GeometricRenderer
   final static private String C_SHIP_IMAGE_WHITE  = "Alien-HeavyCruiser-lights-white.png";
   final static private String C_SHIP_IMAGE_YELLOW = "Alien-HeavyCruiser-lights-yellow.png";
   
+  final static private String C_HUD_IMAGE = "hud_800x600a.png";
+  
   final static private String C_BACKGROUND_IMAGE = "planet_900x600.png";
   
   private PImage[] mShipFrames;
   private int mCurFrame = -1;
+  
+  private PImage mHud;
   
   final static private float C_SHIP_SCALE_FACTOR = 0.3f; 
   
@@ -40,8 +44,13 @@ class HudRenderer extends GeometricRenderer
   
   HudRenderer(){
      
+     
+    
       // load images for the starships
       loadStarshipImages();
+     
+      // load hud image (overlay)
+      mHud = loadImage(C_HUD_IMAGE);
       
       // load background image.
       mImgBackground = loadImage(C_BACKGROUND_IMAGE);
@@ -126,7 +135,9 @@ class HudRenderer extends GeometricRenderer
      text("Hello", p.x, p.y);
      imageMode(CENTER);
      image(mImgShipYellow, p.x, p.y);
-     super.renderHud(hudModel);
+     imageMode(CORNER);
+     image(mHud, 0,0);
+     //super.renderHud(hudModel);
   }
   
   
