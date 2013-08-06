@@ -11,6 +11,8 @@ class GeometricRenderer extends RendererBase
   }
   
   void renderFrameFinalize(){
+     textAlign(LEFT);
+     text("Framerate: " + int(frameRate), 10 ,60 );
   }
   
 
