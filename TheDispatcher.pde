@@ -7,15 +7,15 @@
 class TheDispatcher
 {
     private ShipModel mShipModel;
-    private ProjectileModel mProjectileModel;
+    private ProjectilesCollectionModel mProjectilesCollectionModel;
     private HudModel mHudModel;
     
     void setShipModel(ShipModel sm){
        mShipModel  =sm;
     }
     
-    void setProjectileModel(ProjectileModel pm){
-       mProjectileModel = pm;
+    void setProjectilesCollectionModel(ProjectilesCollectionModel pm){
+       mProjectilesCollectionModel = pm;
     }
     
     void setHudModel(HudModel hm){
@@ -29,7 +29,7 @@ class TheDispatcher
     
     void createProjectile(PVector startPoint, float angle, float speed){
        Projectile pj = new Projectile(startPoint, angle, speed);
-       mProjectileModel.add(pj);
+       mProjectilesCollectionModel.add(pj);
     }
     
 }

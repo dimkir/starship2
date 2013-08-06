@@ -74,7 +74,7 @@ class GeometricRenderer extends RendererBase
 
 
 
-  void renderProjectiles(ProjectileModel projectileModel) {
+  void renderProjectiles(ProjectilesCollectionModel projectileModel) {
     fill(COLOR_BLUE);
     stroke(COLOR_YELLOW);
     PVector[] projectiles = projectileModel.getProjectileLocations();

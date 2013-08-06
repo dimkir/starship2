@@ -1,7 +1,7 @@
 /**
 * This is projectile Collection (named model unfortunately)
 */
-class ProjectileModel
+class ProjectilesCollectionModel
 {
    private Projectile[] mProjectiles;
    private final int C_RAND_PROJECTILE_COUNT = 10; 
@@ -9,7 +9,7 @@ class ProjectileModel
    private PVector[] mLocations;
   
   
-   ProjectileModel(int vWidth, int vHeight){
+   ProjectilesCollectionModel(int vWidth, int vHeight){
       mProjectiles = new Projectile[C_RAND_PROJECTILE_COUNT];
       mLocations = new PVector[mProjectiles.length];
       for(int i = 0; i < C_RAND_PROJECTILE_COUNT ; i++){

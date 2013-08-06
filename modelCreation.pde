@@ -1,5 +1,5 @@
 ShipModel shipModel;
-ProjectileModel projectileModel;
+ProjectilesCollectionModel projectileModel;
 HudModel hudModel;
 TheDispatcher theDispatcher;
 
@@ -13,10 +13,10 @@ void initModelsForTesting()
     //shipModel = new ShipModel(100, width-100, 100,  height - 100, theDispatcher); // inits ship in some location?
     shipModel = new NetShipModel(C_SERVER_IP, theDispatcher);
     
-    projectileModel = new ProjectileModel(width, height); // inits some random projectiles with random directions.
+    projectileModel = new ProjectilesCollectionModel(width, height); // inits some random projectiles with random directions.
  
     theDispatcher.setShipModel(shipModel);
-    theDispatcher.setProjectileModel(projectileModel);
+    theDispatcher.setProjectilesCollectionModel(projectileModel);
     hudModel = new HudModel(width, height, theDispatcher);
     theDispatcher.setHudModel(hudModel);
     
