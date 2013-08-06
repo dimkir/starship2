@@ -6,6 +6,7 @@ TheDispatcher theDispatcher;
 
 
 final String C_SERVER_IP = "127.0.0.1";
+//final String C_SERVER_IP = "192.168.0.20";
 void initModelsForTesting()
 {
     theDispatcher = new TheDispatcher();
